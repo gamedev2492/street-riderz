@@ -19,7 +19,7 @@ public class RCC_CreateAudioSource : MonoBehaviour {
 	/// Creates new audiosource with specified settings.
 	/// </summary>
 	public static AudioSource NewAudioSource(GameObject go, string audioName, float minDistance, float maxDistance, float volume, AudioClip audioClip, bool loop, bool playNow, bool destroyAfterFinished){
-		
+		Debug.Log("Create audio:+" + go.name);
 		GameObject audioSourceObject = new GameObject(audioName);
 
 		if (go.transform.Find ("All Audio Sources")) {

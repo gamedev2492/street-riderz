@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RCC_Settings
   m_EditorClassIdentifier: 
   RCCVersion: 3.3
-  controllerSelectedIndex: 0
+  controllerSelectedIndex: 1
   behaviorSelectedIndex: 0
   overrideFixedTimeStep: 1
   fixedTimeStep: 0.02
@@ -172,7 +172,7 @@ MonoBehaviour:
     sidewaysAsymptoteValue: 2
   useFixedWheelColliders: 1
   lockAndUnlockCursor: 0
-  controllerType: 0
+  controllerType: 1
   verticalInput: Vertical
   horizontalInput: Horizontal
   mouseXInput: Mouse X
@@ -221,7 +221,7 @@ MonoBehaviour:
   units: 0
   uiType: 0
   useTelemetry: 0
-  mobileController: 0
+  mobileController: 3
   UIButtonSensitivity: 5
   UIButtonGravity: 5
   gyroSensitivity: 2
@@ -283,8 +283,8 @@ MonoBehaviour:
   maxBrakeSoundVolume: 0.494
   foldGeneralSettings: 1
   foldBehaviorSettings: 0
-  foldControllerSettings: 0
-  foldUISettings: 0
+  foldControllerSettings: 1
+  foldUISettings: 1
   foldWheelPhysics: 0
   foldSFX: 0
   foldOptimization: 0
