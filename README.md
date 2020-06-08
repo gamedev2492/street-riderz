@@ -7,11 +7,11 @@ iOS racing game
 - Unity 2019.3.13f1 or later
 - Amazon GameLift Server SDK: <https://aws.amazon.com/gamelift/getting-started/>
 - AWS Mobile SDK for Unity: <https://aws.amazon.com/blogs/developer/aws-sdk-for-net-now-targets-net-standard-2-0/>
-- Realistic Car Controller  - <https://assetstore.unity.com/packages/tools/physics/realistic-car-controller-16296/>
-- CScape City System - <https://assetstore.unity.com/packages/tools/modeling/cscape-city-system-86716/>
 
 ## SDK and Assets
 - Amazon GameLift: For Multiplayer Matchmaking and Server Hosting
+- Realistic Car Controller  - <https://assetstore.unity.com/packages/tools/physics/realistic-car-controller-16296/>
+- CScape City System - <https://assetstore.unity.com/packages/tools/modeling/cscape-city-system-86716/>
 
 ## Building and using the Project
 
