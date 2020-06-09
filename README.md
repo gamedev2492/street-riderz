@@ -6,7 +6,7 @@ iOS racing game
 - An AWS account: <https://aws.amazon.com/getting-started/>
 - Unity 2019.3.13f1 or later
 - Amazon GameLift Server SDK: <https://aws.amazon.com/gamelift/getting-started/>
-- AWS Mobile SDK for Unity: <https://aws.amazon.com/blogs/developer/aws-sdk-for-net-now-targets-net-standard-2-0/>
+- AWS Mobile SDK for Unity for .NET Standard 2.0: <https://aws.amazon.com/blogs/developer/aws-sdk-for-net-now-targets-net-standard-2-0/>
 
 ## SDKs and Assets
 - Amazon GameLift: For Multiplayer Matchmaking and Server Hosting
