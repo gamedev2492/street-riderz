@@ -40,11 +40,7 @@ namespace Supragma
 
         void Start()
         {
-            // tells client/server we want this many players
-
-            //todo set max players
-            //maxConnections = MaxPlayers;
-
+        
             // detect headless server mode
             if (SystemInfo.graphicsDeviceType == UnityEngine.Rendering.GraphicsDeviceType.Null)
             {
@@ -92,39 +88,35 @@ namespace Supragma
         // when gameover or time out
         public void TerminateSession()
         {
-            Debug.Log("** TerminateSession Requested **");
+            Debug.Log("TerminateSession");
             if (isGameliftServer)
             {
                 GameLiftServerAPI.TerminateGameSession();
                 GameLiftServerAPI.ProcessEnding();
             }
-            Debug.Log("** Process Exit **");
+            Debug.Log("Quit");
             Application.Quit();
         }
 
         private void SetupClient()
         {
-            // in debug mode don't attempt to match with GameLift
-            if (PlayerPrefs.GetInt("ShowUnityHUD", 1) == 0)
-            {
-                // TODO update UI 
-                FindMatch();
-            }
+            // TODO update UI 
+            FindMatch();
         }
 
         async void FindMatch()
         {
-            Debug.Log("Reaching out to client service Lambda function");
+            Debug.Log("Client service Lambda function");
 
             AWSConfigs.AWSRegion = "us-east-1"; // Your region here
 
             // paste this in from the Amazon Cognito Identity Pool console
             CognitoAWSCredentials credentials = new CognitoAWSCredentials(
-                "us-east-1:a70f5010-a4c4-45a7-ba01-8e3d0cc08a9d", // Your identity pool ID here
-                RegionEndpoint.USEast1 // Your region here
+                "us-east-1:47754fbb-4776-4c4c-9618-f1a912db5559", // identity pool ID
+                RegionEndpoint.USEast1 //todo hardcoded region!
             );
 
-            //todo json change later
+            //todo hardcoded JSON value!
             string matchParams = "{\"latencyMap\":{\"us-east-1\":60}, \"playerSkill\":10}";
 
             AmazonLambdaClient client = new AmazonLambdaClient(credentials, RegionEndpoint.USEast1);
@@ -150,7 +142,7 @@ namespace Supragma
 
                     if (connectionObj.sessionConnectionInfo.port == null)
                     {
-                        Debug.Log($"Error in Lambda assume matchmaking failed: {payload}");
+                        Debug.Log("Error in Lambda assume matchmaking failed: {payload}");
 
                         //todo show UI
                         //SetStatusText("Matchmaking failed");
@@ -165,6 +157,8 @@ namespace Supragma
                         //todo Set IP and Port for client and start it
                         //networkAddress = connectionObj.GameSessionConnectionInfo.IpAddress;
                         //networkPort = Int32.Parse(connectionObj.GameSessionConnectionInfo.Port);
+
+                        //Start client here
                         //StartClient();
                     }
                 }
@@ -187,10 +181,7 @@ namespace Supragma
         {
             // start the server
 
-            //todo 
-            //networkPort = ListenPort;
-            //StartServer();
-            //Debug.Log($"Server listening on port {networkPort}");
+            Server.Start(MaxPlayers, ListenPort);
 
             // initialize GameLift
             print("Starting GameLift initialization.");
@@ -225,22 +216,22 @@ namespace Supragma
                     ListenPort,
                     new LogParameters(new List<string>()
                     {
-                    "/local/game/logs/myserver.log"
+                        "/local/game/logs/myserver.log"
                     })
                 );
                 var processReadyOutcome = GameLiftServerAPI.ProcessReady(processParams);
                 if (processReadyOutcome.Success)
                 {
-                    print("GameLift process ready.");
+                    Debug.Log("GameLift process ready.");
                 }
                 else
                 {
-                    print($"GameLift: Process ready failure - {processReadyOutcome.Error}.");
+                    Debug.Log($"GameLift: Process ready failure - {processReadyOutcome.Error}.");
                 }
             }
             else
             {
-                print($"GameLift: InitSDK failure - {initSDKOutcome.Error}.");
+                Debug.Log($"GameLift: InitSDK failure - {initSDKOutcome.Error}.");
             }
         }
     }
