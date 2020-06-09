@@ -9,7 +9,7 @@ iOS racing game
 - AWS Mobile SDK for Unity for .NET Standard 2.0: <https://aws.amazon.com/blogs/developer/aws-sdk-for-net-now-targets-net-standard-2-0/>
 
 ## SDKs and Assets
-- Amazon GameLift: For Multiplayer Matchmaking and Server Hosting
+- Amazon GameLift(With AWS Lambda and Cognito): For Multiplayer Matchmaking and Server Hosting
 - Realistic Car Controller  - <https://assetstore.unity.com/packages/tools/physics/realistic-car-controller-16296/>
 - CScape City System - <https://assetstore.unity.com/packages/tools/modeling/cscape-city-system-86716/>
 
