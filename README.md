@@ -8,10 +8,21 @@ iOS racing game
 - Amazon GameLift Server SDK: <https://aws.amazon.com/gamelift/getting-started/>
 - AWS Mobile SDK for Unity: <https://aws.amazon.com/blogs/developer/aws-sdk-for-net-now-targets-net-standard-2-0/>
 
-## SDK and Assets
+## SDKs and Assets
 - Amazon GameLift: For Multiplayer Matchmaking and Server Hosting
 - Realistic Car Controller  - <https://assetstore.unity.com/packages/tools/physics/realistic-car-controller-16296/>
 - CScape City System - <https://assetstore.unity.com/packages/tools/modeling/cscape-city-system-86716/>
+
+## Contents
+
+``` html
+├── street-riderz           # The root of the Unity project
+    ├── Assets              # Editable assets, source files
+    │   └── _Core           # Unity scripts and all other files
+    ├── Packages            # Unity packages folder
+    ├── ProjectSettings     # Unity project folder
+    └── AWS                 # Lambda functions, IAM policies, rulesets, etc.
+```
 
 ## Building and using the Project
 
